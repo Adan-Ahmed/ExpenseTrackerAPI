@@ -10,17 +10,17 @@ namespace ExpenseTrackerAPI.Models
         [StringLength(60)]
         public string Title { get; set; } = string.Empty;
         public decimal Amount { get; set; }
-        public enum Type 
+        public enum TransactionType
         {
             Expense,
             Income
         }
         [Required]
-        public Type typeEnume { get; set; }
-        public DateOnly Date;
+        public TransactionType Type { get; set; }
+        public DateOnly Date {  get; set; }
         public int CategoryId { get; set; }
 
         [Required]
-        public Category category { get; set; }
+        public Category Category { get; set; }
     }
 }
