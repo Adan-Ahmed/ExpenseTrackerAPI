@@ -2,6 +2,11 @@
 
 namespace ExpenseTrackerAPI.Models
 {
+    public enum TransactionType
+    {
+        Expense,
+        Income
+    }   
     public class Transaction
     {
         public int Id { get; set; }
@@ -10,11 +15,7 @@ namespace ExpenseTrackerAPI.Models
         [StringLength(60)]
         public string Title { get; set; } = string.Empty;
         public decimal Amount { get; set; }
-        public enum TransactionType
-        {
-            Expense,
-            Income
-        }
+
         [Required]
         public TransactionType Type { get; set; }
         public DateOnly Date {  get; set; }

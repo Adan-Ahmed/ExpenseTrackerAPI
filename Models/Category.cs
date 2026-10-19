@@ -7,7 +7,11 @@ namespace ExpenseTrackerAPI.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength (60)]
+        [StringLength(60)]
         public string Name { get; set; } = string.Empty;
+
+        public List<Transaction> Transactions { get; set; } = new List<Transaction> ();
+
+
     }
 }
