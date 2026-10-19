@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ExpenseTrackerAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ExpenseTrackerAPI.Data
 {
@@ -8,16 +9,8 @@ namespace ExpenseTrackerAPI.Data
         { 
             
         }
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
 
-
-//public class LibraryDbContext : DbContext
-//{
-//    public LibraryDbContext(DbContextOptions<LibraryDbContext> options)
-//        : base(options)
-//    {
-//    }
-
-//    public DbSet<Book> Books { get; set; }
-//}
